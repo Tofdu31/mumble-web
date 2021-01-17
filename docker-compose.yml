@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  mumble-server:
+    build:
+       context: .
+       dockerfile: ./Dockerfile
+    container_name: ${CONTAINER_MUMBLE_WEB}
+    restart: always
+    ports:
+      - "85580:80"
+    
+	volumes:
+      - mumble-data:/mumble
+      - slice:/usr/share/slice	  
+	command: python /usr/src/app/pyweb/manage.py runserver 0.0.0.0:80
+    
+	environment:
+      - VIRTUAL_HOST= ${DOMAINS}
+      - LETSENCRYPT_HOST= ${DOMAINS}
+      - LETSENCRYPT_EMAIL= ${LETSENCRYPT_EMAIL}
+
+volumes:
+    slice:
+    mumble-data:
+
+networks:
+    default:
+       external:
+         name: ${NETWORK}
