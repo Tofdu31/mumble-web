@@ -11,7 +11,7 @@
 
 mumble-web is an HTML5 [Mumble] client for use in modern browsers.
 
-A live demo is running [here](https://voice.johni0702.de/?address=voice.johni0702.de&port=443/demo) (or [without WebRTC](https://voice.johni0702.de/?address=voice.johni0702.de&port=443/demo&webrtc=false)).
+FIRST !!! INSTALL MUMBLE with NGINX and Let's Encrypt : https://github.com/Tofdu31/docker-mumble-nginx-letsencrypt
 
 The Mumble protocol uses TCP for control and UDP for voice.
 Running in a browser, both are unavailable to this client.
