@@ -12,6 +12,7 @@ services:
     ports:
       - "${port_mumble_web}:80"    
     environment:
+      - MUMBLE_SERVER= ${MUMBLE_SERVER}    
       - VIRTUAL_HOST= ${DOMAINS}
       - LETSENCRYPT_HOST= ${DOMAINS}
       - LETSENCRYPT_EMAIL= ${LETSENCRYPT_EMAIL}
