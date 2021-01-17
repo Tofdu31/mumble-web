@@ -6,14 +6,11 @@ INSTRUCTION
 Please install first Mumble Server with NGINX and Let's Encrypt
 https://github.com/Tofdu31/docker-mumble-nginx-letsencrypt
 
-    git clone https://github.com/Tofdu31/docker-mumble-nginx-letsencrypt
     
 Configure files projet Mumble Server
 ---------------------
 
 mumble-web is an HTML5 [Mumble] client for use in modern browsers.
-
-### FIRST !!! INSTALL MUMBLE with NGINX and Let's Encrypt : https://github.com/Tofdu31/docker-mumble-nginx-letsencrypt
 
 The Mumble protocol uses TCP for control and UDP for voice.
 Running in a browser, both are unavailable to this client.
@@ -31,6 +28,9 @@ administrative functionallity, are still missing.
 ### Installing
 
 1. Clone this repositories
+
+    git clone https://github.com/Tofdu31/docker-mumble-nginx-letsencrypt
+
 2. Edit end configure .env
 3. Start with : docker-compose up (or docker-compose up -d)
 
