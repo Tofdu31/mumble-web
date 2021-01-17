@@ -6,7 +6,7 @@ services:
        context: .
        dockerfile: ./Dockerfile
        args:
-        - adress_mumble_server=${adress_mumble_server}
+        - MUMBLE_SERVER=${MUMBLE_SERVER}
     container_name: ${CONTAINER_MUMBLE_WEB}
     restart: always
     ports:
