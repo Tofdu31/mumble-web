@@ -16,7 +16,7 @@ RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories 
     mkdir -p /home/node && \
     mkdir -p /home/node/.npm-global && \
     mkdir -p /home/node/app  && \
-    chown -R node: /home/node 
+    chown -R node: /home/node
 
 USER node
 
@@ -29,7 +29,7 @@ RUN cd /home/node && \
 
 USER root
 
-RUN apk del gcc git
+RUN apk del gcc git make g++ || true
 
 USER node
 
