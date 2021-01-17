@@ -3,7 +3,7 @@ FROM alpine:edge
 LABEL maintainer="Andreas Peters <support@aventer.biz>"
 
 # Define ARG Variable Mumble
-ARG MUMBLE_SERVERr=$MUMBLE_SERVER
+ARG MUMBLE_SERVER=$MUMBLE_SERVER
 
 # Define Variable Mumble
 ENV MUMBLE_SERVER=${MUMBLE_SERVER}
