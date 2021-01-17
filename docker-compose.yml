@@ -10,7 +10,7 @@ services:
     container_name: ${CONTAINER_MUMBLE_WEB}
     restart: always
     ports:
-      - "${port_mumble_web}:80
+      - "${port_mumble_web}:80"
     
     volumes:
       - mumble-data:/mumble
