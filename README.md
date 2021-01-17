@@ -1,13 +1,17 @@
 # mumble-web
 
-=============
+INSTRUCTION
+---------------------
 
-<p align="center">
-    <img src="TEMPLATE MUMBLE SERVER.png" alt="Docker Mumble NGINX LET'S ENCRYPT" >
+This version use the projet of EvertRamos : docker-compose-letsencrypt-nginx-proxy-companion
 
-<p align="center">
-  Docker image for Mumble server.
-</p>
+Please install first Mumble Server with NGINX and Let's Encrypt
+https://github.com/Tofdu31/docker-mumble-nginx-letsencrypt
+
+    git clone https://github.com/Tofdu31/docker-mumble-nginx-letsencrypt
+    
+Configure files projet Mumble Server
+---------------------
 
 mumble-web is an HTML5 [Mumble] client for use in modern browsers.
 
