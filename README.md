@@ -29,7 +29,7 @@ administrative functionallity, are still missing.
 ### Installing
 
 1. Clone this repositories
-2. Edit en configure .env
+2. Edit end configure .env
 3. Start with : docker-compose up (or docker-compose up -d)
 
 ### License
