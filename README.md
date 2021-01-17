@@ -3,8 +3,6 @@
 INSTRUCTION
 ---------------------
 
-This version use the projet of EvertRamos : docker-compose-letsencrypt-nginx-proxy-companion
-
 Please install first Mumble Server with NGINX and Let's Encrypt
 https://github.com/Tofdu31/docker-mumble-nginx-letsencrypt
 
