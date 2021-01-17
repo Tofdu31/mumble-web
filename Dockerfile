@@ -33,8 +33,8 @@ RUN apk del gcc git make g++ || true
 
 USER node
 
-EXPOSE 8080
+EXPOSE 80
 
 ENTRYPOINT ["/sbin/tini", "--"]
-CMD websockify --ssl-target --web=/home/node/dist 8080 "$MUMBLE_SERVER"
+CMD websockify --ssl-target --web=/home/node/dist 80 "$MUMBLE_SERVER"
 
