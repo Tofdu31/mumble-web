@@ -2,6 +2,13 @@ FROM alpine:edge
 
 LABEL maintainer="Andreas Peters <support@aventer.biz>"
 
+# Define ARG Variable Mumble
+ARG MUMBLE_SERVERr=$MUMBLE_SERVER
+
+# Define Variable Mumble
+ENV MUMBLE_SERVER=${MUMBLE_SERVER}
+
+
 COPY ./ /home/node
 
 RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
