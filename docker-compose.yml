@@ -11,6 +11,9 @@ services:
     restart: always
     ports:
       - "${port_mumble_web}:80"    
+    volumes:
+      - mumble-data:/mumble
+      - slice:/usr/share/slice/
     environment:
       - MUMBLE_SERVER= ${MUMBLE_SERVER}    
       - VIRTUAL_HOST= ${DOMAINS}
