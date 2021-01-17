@@ -34,6 +34,18 @@ administrative functionallity, are still missing.
 2. Edit end configure .env
 3. Start with : docker-compose up (or docker-compose up -d)
 
+### Running the Container
+---------------------
+
+In order to persist configuration data when upgrading your container you should create a named data
+volume. This is not required but is _highly_ recommended.
+
+    docker volume create --name slice
+
+And
+
+    docker-compose up -d
+
 ### License
 ISC
 
