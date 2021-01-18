@@ -1,14 +1,8 @@
 FROM alpine:edge
 
-LABEL maintainer="Andreas Peters <support@aventer.biz>"
+COPY ./ /home/node/
 
-# Define ARG Variable Mumble
-ARG MUMBLE_SERVER=$MUMBLE_SERVER
-
-# Define Variable Mumble
-ENV MUMBLE_SERVER=${MUMBLE_SERVER}
-
-COPY ./ /home/node
+WORKDIR /home/node
 
 RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
     apk add --no-cache git nodejs npm tini websockify && \
@@ -23,10 +17,14 @@ USER node
 ENV PATH=/home/node/.npm-global/bin:$PATH
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 
-RUN cd /home/node && \
-    npm install && \
-    npm run build 
 
+# COPY ./ /opt/mumble-web/
+
+# WORKDIR /opt/mumble-web
+
+# RUN npm install && npm run build
+
+RUN cd /home/node && \                                                                                                                                                                                                 npm install && \                                                                                                                                                                                                   npm run build                                                                                                                                                                                                  
 USER root
 
 RUN apk del gcc git make g++ || true
@@ -34,7 +32,7 @@ RUN apk del gcc git make g++ || true
 USER node
 
 EXPOSE 80
+ENV MUMBLE_SERVER=pushtotalk.nbility.fr
 
 ENTRYPOINT ["/sbin/tini", "--"]
 CMD websockify --ssl-target --web=/home/node/dist 80 "$MUMBLE_SERVER"
-
